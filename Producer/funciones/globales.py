@@ -2,8 +2,8 @@
 DISPOSITIVOS = 3
 #CANTIDAD DE CONSUMIDORES
 num_consumidores = 3
-#Contador
-CONTADOR = 0
+#Contador de mensajes
+mensajes_maximos = 20
 #PUERTOS LOCALES PARA BROKER1, BROKER2 Y BROKER3
 bootstrap_servers = ['localhost:9094','localhost:9095','localhost:9096']
 #TOPICOS
