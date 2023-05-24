@@ -1,0 +1,41 @@
+# Archivos y directorios generados por entornos de desarrollo
+__pycache__/
+venv/
+*.pyc
+test.py
+# Directorio de dependencias
+lib/
+img/
+KafkaConsumerProducer.egg-info/
+
+# Archivo de configuración local
+config.ini
+
+# Archivos de registro y salida
+*.log
+*.txt
+*.pdf
+
+# Archivos de caché
+.cache/
+
+# Archivos de compilación
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+
+# Archivos de entorno
+.env
+
+# Carpeta de compilación
+build/
+
+# Carpeta de distribución
+dist/
+
+# Carpeta de documentación generada
+docs/_build/
+
+# Carpeta de archivos temporales
+temp/
