@@ -15,7 +15,7 @@ def produce_messages(name_device, bootstrap_servers,size,delay):
     topicos = listar_topicos()
     producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
     tiempo_inicio = time.time()
-    while contador_mensajes <= 5: 
+    while contador_mensajes <= mensajes_maximos: 
         topic = random.choice(topicos) 
         value = secrets.token_hex(size)
         data = {
