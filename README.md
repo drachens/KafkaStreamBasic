@@ -12,7 +12,7 @@ Como requisitos para la ejecución del proyecto se requiere:
 
 Para instalar y ejecutar este proyecto siga los siguientes pasos:
 
-1. Clona este repositorio: `git clone https://github.com/tu-usuario/mi-proyecto.git`
+1. Clona este repositorio: `git clone https://github.com/drachens/T2_sistemasDistribuidos.git`
 2. Navega al directorio del proyecto: `cd T2_sistemasDistribuidos`
 3. Instala las dependencias: `python setup.py`
 4. Navega a la carpeta Kafka: `cd Kafka`
