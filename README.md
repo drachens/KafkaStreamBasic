@@ -9,12 +9,14 @@ Este proyecto es una implementación de un cluster de Apache Kafka para la mensa
 Como requisitos para la ejecución del proyecto se requiere:
 1. Docker
 2. Python
+3. Pip
+4. Git
 
 Para instalar y ejecutar este proyecto siga los siguientes pasos:
 
 1. Clona este repositorio: `git clone https://github.com/drachens/T2_sistemasDistribuidos.git`
 2. Navega al directorio del proyecto: `cd T2_sistemasDistribuidos`
-3. Instala las dependencias: `python setup.py`
+3. Instala las dependencias: `pip install .`
 4. Navega a la carpeta Kafka: `cd Kafka`
 5. Crea el entorno docker: `docker-compose up -d`
 6. Abre una consola y navega hasta Consumer: `cd Consumer`
@@ -24,6 +26,14 @@ Para instalar y ejecutar este proyecto siga los siguientes pasos:
 
 Si quieres modificar las variables globales para definir el numero de productores, consumidores y topicos navega navega hasta el
 archivo globales.py `cd Producer/funciones/globales.py` , abre con un editor de texto el archivo y guarda las nuevas configuraciones.
+
+| Variable | Descripcion | Tipo |
+| --- | --- | --- |
+| `DISPOSITIVOS` | Cantidad de dispositivos IoT a simular. | int |
+| `num_consumidores` | Cantidad de consumidores a simular. | int |
+| `mensajes_maximos` | Cantidad de mensajes a simular. | int |
+| `bootstrap_server` | Direccion(es) del (los) broker(s) Kafka. | array(string) ej: 'ip_address:PORT' |
+| `TOPICOS` | Nombre de los topicos a utilizar. | array(string) |
 
 
 ## Reinicio contenedores
