@@ -1,4 +1,4 @@
-from producer_kafka import produce_messages
+from Producer.utils.produce_messages import produce_messages
 from utils.topicos import verificar_topicos
 import threading
 from dotenv import load_dotenv
