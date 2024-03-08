@@ -1,36 +1,39 @@
 #Cada dispositivo es un productor. Cada dispositivo publica datos en Kafka.
 
 from kafka.errors import KafkaError
-from kafka import KafkaProducer, TopicPartition
-from funciones.globales import *
-from funciones.create_topic import crear_topicos
-from funciones.create_topic import listar_topicos
+from kafka import KafkaProducer
+from utils.topicos import listar_topicos
 import time
+from datetime import datetime
 import random
 import secrets
 import json
-contador_mensajes = 0
-def produce_messages(name_device, bootstrap_servers,size,delay):
-    global contador_mensajes
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+mensajes_maximos = int(os.environ['MENSAJES_MAXIMOS'])
+bootstrap_server = os.environ['BOOTSTRAP_SERVER'].split(',')
+#contador_mensajes = 0
+def produce_messages(name_device, bootstrap_server,size,delay):
+    contador_mensajes = 0
     topicos = listar_topicos()
-    producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
-    tiempo_inicio = time.time()
-    while contador_mensajes <= mensajes_maximos: 
+    producer = KafkaProducer(bootstrap_servers=bootstrap_server)
+    #tiempo_inicio = time.time()
+    while contador_mensajes < mensajes_maximos: 
         topic = random.choice(topicos) 
         value = secrets.token_hex(size)
+        now = datetime.now()
         data = {
-            "timestamp":time.time(),
+            "timestamp":str(now) ,
             "value":{
                 "data":value
             },
-            "name":name_device
+            "name":name_device,
+            "topico":topic
         }
         json_data = json.dumps(data)
         try:
-            # Asignar partición basada en el valor del contador
-            #partition = random.randint(0,num_consumidores)
-            #topic_partition = TopicPartition(topic=topic,partition=partition)
-            # Crear un objeto TopicPartition con el topic y la partición
             # Enviar el mensaje a la partición especificada
             producer.send(topic, json_data.encode('utf-8'))
             contador_mensajes += 1

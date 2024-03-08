@@ -1,11 +1,12 @@
 from producer_kafka import produce_messages
-from funciones.globales import *
-from funciones.create_topic import crear_topicos
+from utils.topicos import verificar_topicos
 import threading
+from dotenv import load_dotenv
 import os
 
-
-
+load_dotenv()
+DISPOSITIVOS = int(os.environ['DISPOSITIVOS'])
+bootstrap_server = os.environ['BOOTSTRAP_SERVER'].split(',')
 
 def Producer():
     # Crear hilos y ejecutar la función
@@ -27,7 +28,7 @@ def Producer():
         print("\n")
 
     for dispositivo in dispositivos:
-        thread = threading.Thread(target=produce_messages,args=(dispositivo["name"],bootstrap_servers,dispositivo["size"],dispositivo["delay"]))
+        thread = threading.Thread(target=produce_messages,args=(dispositivo["name"],bootstrap_server,dispositivo["size"],dispositivo["delay"]))
         thread.start()
         threads.append(thread)
     # Esperar a que todos los hilos terminen
@@ -36,7 +37,7 @@ def Producer():
 
 if __name__ == "__main__":
     #Creamos topicos
-    crear_topicos()
+    verificar_topicos()
     
     Producer()
-    print(CONTADOR)
+    #print(CONTADOR)

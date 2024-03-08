@@ -1,4 +1,9 @@
 from kafka import KafkaProducer, KafkaConsumer
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+bootstrap_server = os.environ['BOOTSTRAP_SERVER'].split(',')
 
 def conectar_kafka(bootstrap_servers):
     # Establecer conexión con Kafka y devolver el cliente de Kafka

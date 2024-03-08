@@ -38,9 +38,9 @@ TOPICOS=sensor_1,sensor_2,sensor_3,sensor_4,sensor_5,senosor_6
 | Variable | Descripcion | Tipo |
 | --- | --- | --- |
 | `DISPOSITIVOS` | Cantidad de dispositivos IoT a simular. | int |
-| `num_consumidores` | Cantidad de consumidores a simular. | int |
-| `mensajes_maximos` | Cantidad de mensajes por dispositivo a simular. | int |
-| `bootstrap_server` | Direccion(es) del (los) broker(s) Kafka. | array(string) ej: 'ip_address:PORT' |
+| `NUM_CONSUMIDORES` | Cantidad de consumidores a simular. | int |
+| `MENSAJES_MAXIMOS` | Cantidad de mensajes por dispositivo a simular. | int |
+| `BOOTSTRAP_SERVER` | Direccion(es) del (los) broker(s) Kafka. | array(string) ej: 'ip_address:PORT' |
 | `TOPICOS` | Nombre de los topicos a utilizar. | array(string) |
 
 

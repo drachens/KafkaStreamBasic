@@ -7,7 +7,8 @@ setuptools.setup(
     description="Kafka producer-consumer Tarea 2",
     packages=setuptools.find_packages(),
     install_requires=[
-        "kafka-python"  # Reemplaza X.X.X con la versión específica de la librería de Kafka que necesitas
+        "kafka-python",
+        "python-dotenv"  # Reemplaza X.X.X con la versión específica de la librería de Kafka que necesitas
     ],
     # Otras configuraciones y metadatos del paquete
 )
