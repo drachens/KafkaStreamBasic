@@ -13,7 +13,6 @@ Este proyecto es una implementación básica de un clúster de Apache Kafka para
 - [Variables de Entorno](#variables-de-entorno)
 - [Reinicio de Contenedores](#reinicio-de-contenedores)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Licencia](#licencia)
 - [Contacto](#contacto)
 
 ## Características
@@ -103,9 +102,6 @@ docker-compose up -d
 - [Python 3](https://www.python.org/)
 - [Git](https://git-scm.com/)
 
-## Licencia
-
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Contacto
 
